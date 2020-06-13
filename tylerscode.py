@@ -1,13 +1,82 @@
 from random import randint
-def rng(parameter_low, parameter_high):
-    random_number = randint(parameter_low,parameter_high)
-    print(str(random_number))
-    return random_number
 
-print('Generate a random number between two values')
-print('input min value')
-x = input()
-print('input max value')
-y = input()
+def intro():
+    print('Welcome to the hottest new game craze, Guess! That! Number!')
+    print('What\'s your name contestant?')
 
-rng(x,y)
+    input()
+
+    print('AH that\'s a lovely name! Truly breath taking!')
+    print('A random number between 1 and 10 has been generated using our special rng technology. It\'s your job to Guess! That! Number!')
+    print('You have three tries to guess the number!')
+    print('Please type your first guess below!')
+
+
+
+
+
+
+program_running = True
+
+while program_running == True:
+
+    intro()
+
+    game_running = True
+
+    while game_running == True:
+
+
+        number_true = randint(1, 10)
+
+
+        round_running = True
+
+        counter = 0
+
+        while round_running == True:
+
+
+
+            if counter == 3:
+                print('That\'s your last guess. Would you like to play again? Yes or No?')
+                ye = str(input())
+                if ye == str('yes'):
+                    game_running = False
+                    round_running = False
+                    # this might be wrong
+                else:
+                    print('See you next time')
+                    game_running = False
+                    round_running = False
+                    program_running = False
+
+
+
+            guess_one = int(input())
+
+
+
+            if guess_one == number_true:
+                print('You won')
+                print('Would you like to play again? Yes or No?')
+                play_again = str(input())
+                if play_again == str('yes'):
+                    game_running = False
+                    round_running = False
+                    #this might be wrong
+                else:
+                    print('See you next time')
+                    game_running = False
+                    round_running = False
+                    program_running = False
+
+            elif int(guess_one) > int(number_true):
+                print('Sorry too high')
+                counter += 1
+                round_running = True
+
+            elif int(guess_one) < int(number_true):
+                print('Sorry too low')
+                counter += 1
+                round_running = True
