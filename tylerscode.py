@@ -1,9 +1,13 @@
-grid = []
-for i in range(0,10):
-    row = []
-    grid.append(row)
-    for j in range(0, 10):
-        row.append(0)
+from random import randint
+def rng(parameter_low, parameter_high):
+    random_number = randint(parameter_low,parameter_high)
+    print(str(random_number))
+    return random_number
 
-for i in grid:
-    print(i)
+print('Generate a random number between two values')
+print('input min value')
+x = input()
+print('input max value')
+y = input()
+
+rng(x,y)
