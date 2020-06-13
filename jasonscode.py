@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #making a grid
 grid = []
 for i in range(0,10):
@@ -56,3 +57,8 @@ game = True
 while game == True:
     look_at_grid()
     game = move_player()
+=======
+#this is my house
+print('hello')
+print('isisisisissi')
+>>>>>>> aa4a2cc66138c8ae7a434ad867ec0ec9a746f843
