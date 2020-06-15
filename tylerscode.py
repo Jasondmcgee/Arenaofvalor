@@ -13,9 +13,6 @@ def intro():
 
 
 
-
-
-
 program_running = True
 
 while program_running == True:
@@ -26,42 +23,20 @@ while program_running == True:
 
     while game_running == True:
 
-
         number_true = randint(1, 10)
-
 
         round_running = True
 
         counter = 0
 
         while round_running == True:
-
-
-
-            if counter == 3:
-                print('That\'s your last guess. Would you like to play again? Yes or No?')
-                ye = str(input())
-                if ye == str('yes'):
-                    game_running = False
-                    round_running = False
-                    # this might be wrong
-                else:
-                    print('See you next time')
-                    game_running = False
-                    round_running = False
-                    program_running = False
-
-
-
             guess_one = int(input())
-
-
 
             if guess_one == number_true:
                 print('You won')
                 print('Would you like to play again? Yes or No?')
                 play_again = str(input())
-                if play_again == str('yes'):
+                if play_again == 'yes':
                     game_running = False
                     round_running = False
                     #this might be wrong
@@ -71,12 +46,23 @@ while program_running == True:
                     round_running = False
                     program_running = False
 
-            elif int(guess_one) > int(number_true):
+            elif guess_one > int(number_true):
                 print('Sorry too high')
                 counter += 1
-                round_running = True
 
-            elif int(guess_one) < int(number_true):
+            elif guess_one < int(number_true):
                 print('Sorry too low')
                 counter += 1
-                round_running = True
+            
+            if counter >= 3:
+                print('That\'s your last guess. Would you like to play again? Yes or No?')
+                ye = str(input())
+                if ye == 'yes':
+                    game_running = False
+                    round_running = False
+                    # this might be wrong
+                else:
+                    print('See you next time')
+                    game_running = False
+                    round_running = False
+                    program_running = False
